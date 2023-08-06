@@ -96,6 +96,7 @@ void UpdatePointsDisplay(SDL_Surface surface) {
 void ResetPlayers() {
     lPlayerY = 0;
     rPlayerY = 0;
+    UpdatePointsDisplay(*screenSurface);
 }
 
 void OnSideHit(int side) {
@@ -115,7 +116,6 @@ void OnSideHit(int side) {
 
 
     ScreenWipe(window, 1000, color, ResetPlayers, null);
-
 
     pauseBalls = false;
 

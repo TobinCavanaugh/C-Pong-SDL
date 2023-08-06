@@ -38,7 +38,7 @@ void ScreenWipe(SDL_Window *window, int totalTimeMs, uint32_t color, void (*Scre
 
     SDL_Delay(thirdTime);
 
-    for (int i = surface->h - 1; i >= 0; i--) {
+    for (int i = 0; i < surface->h; i++) {
         lineRect.y = i;
 
         // Copy the line from oldSurface back to surface
