@@ -16,6 +16,8 @@ SDL_Rect GetBallRect(const Ball ball) {
 }
 
 float CalculateEnglish(float ballY, float playerY, float playerH) {
+//    return 1;
+
     return ((playerY + (playerH / 2) - ballY) / playerH) * 2 * ballEnglishMult * -1;
 }
 
@@ -26,7 +28,7 @@ float CalculateEnglish(float ballY, float playerY, float playerH) {
 //}
 
 float GetBallAddition(Ball *ball, float directionAmount, float deltaTime, int screenDim) {
-    float fractionX = ball->directionX * deltaTime * ball->ballSpeed * (float) screenDim;
+    float fractionX = directionAmount * deltaTime * ball->ballSpeed * (float) screenDim;
     return fractionX;
 }
 
@@ -49,6 +51,8 @@ void DoBallUpdate(Ball *ball,
         ball->directionX *= -1;
         ball->positionX += 1;
         collided = 1;
+//        ball->directionY = CalculateEnglish(ball->positionY, lPlayer.y, lPlayer.h);
+
         ball->directionY = CalculateEnglish(ball->positionY, lPlayer.y, lPlayer.h);
         collided = 1;
     }
