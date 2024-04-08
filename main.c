@@ -27,7 +27,6 @@ uint8_t *keyboardState;
 
 bool pauseBalls = false;
 
-
 //The surface that will be the screen
 SDL_Surface *screenSurface = NULL;
 
@@ -184,7 +183,7 @@ int main(int argc, char *args[]) {
                 //4:3 -> 400
                 // 4 / 3 * 300
 
-                moveSensitivity = (float) screenSurface->clip_rect.h / (float) screenSurface->clip_rect.w * 533.0f;
+                moveSensitivity = (float) screenSurface->clip_rect.h;
 
                 //Restart the delta time so the ball doesnt jump through the wall
                 RestartDeltaTime();
